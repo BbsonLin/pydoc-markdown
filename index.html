@@ -7,24 +7,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="None">
   
-  <link rel="shortcut icon" href="./img/favicon.ico">
-  <title>Home - pyodoc-markdown Documentation</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>pyodoc-markdown Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="./css/highlight.css">
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
   
   <script>
     // Current page data
     var mkdocs_page_name = "Home";
     var mkdocs_page_input_path = "index.md";
-    var mkdocs_page_url = "/";
+    var mkdocs_page_url = null;
   </script>
   
-  <script src="./js/jquery-2.1.1.min.js"></script>
-  <script src="./js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="./js/highlight.pack.js"></script> 
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
 
@@ -34,93 +36,59 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
         <a href="." class="icon icon-home"> pyodoc-markdown Documentation</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
-	  
-          
-            <li class="toctree-l1 current">
-		
-    <a class="current" href=".">Home</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#pydocmd">pydocmd</a></li>
-    
-
-    <li class="toctree-l2"><a href="#installation">Installation</a></li>
-    
-
-    <li class="toctree-l2"><a href="#usage">Usage</a></li>
-    
-
-    <li class="toctree-l2"><a href="#syntax">Syntax</a></li>
-    
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href=".">Home</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#syntax">Syntax</a>
         <ul>
-        
-            <li><a class="toctree-l3" href="#cross-references">Cross-references</a></li>
-        
-            <li><a class="toctree-l3" href="#sections">Sections</a></li>
-        
-            <li><a class="toctree-l3" href="#code-blocks">Code Blocks</a></li>
-        
+    <li class="toctree-l3"><a class="reference internal" href="#cross-references">Cross-references</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sections">Sections</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#code-blocks">Code Blocks</a>
+    </li>
         </ul>
-    
-
-    <li class="toctree-l2"><a href="#changes">Changes</a></li>
-    
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#changes">Changes</a>
         <ul>
-        
-            <li><a class="toctree-l3" href="#v201">v2.0.1</a></li>
-        
-            <li><a class="toctree-l3" href="#v200">v2.0.0</a></li>
-        
+    <li class="toctree-l3"><a class="reference internal" href="#v210-2020-03-01">v2.1.0 (2020-03-01)</a>
+    </li>
         </ul>
-    
-
+    </li>
     </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">API Documentation</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="document/">Document</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="imp/">Import Utils</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Extension API</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="extensions/loader/">Loader</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="extensions/preprocessor/">Preprocessor</a>
-                </li>
-    </ul>
-	    </li>
-          
-        </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API Documentation</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="document/">Document</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="imp/">Import Utils</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Extension API</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="extensions/loader/">Loader</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="extensions/preprocessors/">Preprocessors</a>
+                    </li>
+                </ul>
       </div>
-      &nbsp;
+    </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -148,14 +116,19 @@
       
     </li>
   </ul>
+  
   <hr/>
 </div>
           <div role="main">
             <div class="section">
               
-                <h2 id="pydocmd">pydocmd</h2>
+                <blockquote>
+<p>[April 23, 2019] The current version of Pydoc-Markdown (2.x) is not actively developed.
+Efforts are focused on Pydoc-markdown 3.x which can be found on the <a href="https://github.com/NiklasRosenstein/pydoc-markdown/tree/develop">develop</a>.</p>
+</blockquote>
+<h1 id="pydocmd">pydocmd</h1>
 <p>&ndash; <em>insipired by the <a href="https://keras.io/">Keras</a> Documentation</em></p>
-<p>Pydocmd uses <a href="./www.mkdocs.org/">MkDocs</a> and extended <a href="https://pythonhosted.org/Markdown/">Markdown</a> syntax to generate beautiful
+<p>Pydocmd uses <a href="http://www.mkdocs.org/">MkDocs</a> and extended <a href="https://python-markdown.github.io/">Markdown</a> syntax to generate beautiful
 Python API documentation.</p>
 <p><strong>Todo</strong></p>
 <ul>
@@ -200,6 +173,7 @@ generate:
 # MkDocs pages configuration. The `&lt;&lt;` operator is sugar added by pydocmd
 # that allows you to use an external Markdown file (eg. your project's README)
 # in the documentation. The path must be relative to current working directory.
+# This configuration is not mandatory if you have your own mkdocs.yml config file.
 pages:
 - Home: index.md &lt;&lt; ../README.md
 - foobar.baz:
@@ -212,7 +186,16 @@ gens_dir: _build/pydocmd     # This will end up as the MkDocs 'docs_dir'
 site_dir: _build/site
 theme:    readthedocs
 loader:   pydocmd.loader.PythonLoader
-preprocessor: pydocmd.preprocessor.Preprocessor
+preprocessor: pydocmd.preprocessors.simple.Preprocessor
+
+# Whether to output headers as markdown or HTML.  Used to workaround
+# https://github.com/NiklasRosenstein/pydoc-markdown/issues/11.  The default is
+# to generate HTML with unique and meaningful id tags, which can't be done with
+# markdown.
+#
+# Note: if using the simple generator mode, this will default to 'markdown'
+# instead of 'html'.
+headers: html
 
 # Additional search path for your Python module. If you use Pydocmd from a
 # subdirectory of your project (eg. docs/), you may want to add the parent
@@ -237,8 +220,6 @@ elements to keep. If <code>X</code> is omitted, it will be assumed 1. Example:
 <code>#~some.reference.name</code> results in only <code>name</code> being displayed.</p>
 <p>In order to append additional characters that are not included in the actual
 reference name, another hash-symbol can be used, like <code>#Signal#s</code>.</p>
-<p><strong>pydoc-markdown</strong> can be extended to find other cross-references using the
-<a href="https://niklasrosenstein.github.io/pydoc-markdown/extensions/loader/">Extension API</a>.</p>
 <h3 id="sections">Sections</h3>
 <p>Sections can be generated with the Markdown <code># &lt;Title&gt;</code> syntax. It is important
 to add a whitespace after the hash-symbol (<code>#</code>), as otherwise it would represent
@@ -270,6 +251,56 @@ placeholders can also be tuples in the form <code>(&lt;type&gt;[, ...])</code>.<
 </code></pre>
 <hr />
 <h2 id="changes">Changes</h2>
+<h3 id="v210-2020-03-01">v2.1.0 (2020-03-01)</h3>
+<ul>
+<li>Use <code>yaml.safe_load()</code> instead of <code>yaml.load()</code> to silence warning about
+  unsafe operation (#87)</li>
+<li>
+<h1 id="65-properly-loaded-docstring-for-classmethodstaticmethod">65 &ndash; Properly loaded docstring for classmethod/staticmethod.</h1>
+</li>
+<li>
+<h1 id="62-getting-descriptors-instance-instead-calling-its-get-method">62 &ndash; getting descriptor's instance instead calling its <strong>get</strong> method.</h1>
+</li>
+<li>
+<h1 id="61-pages-configuration-is-deprecated-in-mkdocs-100-mkdoc-dependency-bumped-to-100">61 &ndash; 'pages' configuration is deprecated in MKDocs &gt; 1.0.0. MKDoc dependency bumped to &gt;=1.0.0.</h1>
+</li>
+<li>
+<h1 id="63-pages-configuration-not-required-when-mkdocsyml-present">63 &ndash; Pages configuration not required when mkdocs.yml present.</h1>
+</li>
+<li>Add newline before titles for plaintext visibility</li>
+<li>Arguments/Returns section is considered ended if an empty line is found</li>
+<li>Parse references and replace them with markdown links</li>
+<li>Pretty print function signature</li>
+<li>Add smart and google preprocessors</li>
+</ul>
+<h3 id="v205-2018-11-15">v2.0.5 (2018-11-15)</h3>
+<ul>
+<li>Now copies all files from the docs_dir (to include images etc.) (see #56)</li>
+<li>Fix error with delayed imports changing dictionary size during iteration (see #57)</li>
+<li>Add <code>headers</code> option which can be of value <code>'html'</code> or <code>'markdown'</code> (see #55)</li>
+<li>Default <code>headers</code> option to <code>'markdown'</code> in <code>simple</code> mode (see #59)</li>
+</ul>
+<h3 id="v204-2018-07-24">v2.0.4 (2018-07-24)</h3>
+<ul>
+<li>Add <code>-c key=value</code> argument for <code>generate</code> and <code>simple</code> command</li>
+<li>Add <code>filter=["docstring"]</code> option (#43)</li>
+<li>Fix regex for detecting cross-references (#44)</li>
+<li>Handle classes that don't define <code>__init__()</code> (PR#51)</li>
+<li>Add support for reStructuredText Markup (eg. <code>:class:`MyClass`</code>) (PR#46, #1)</li>
+<li>Handle <code>@property</code> functions (PR#50)</li>
+</ul>
+<h3 id="v203">v2.0.3</h3>
+<ul>
+<li>Fix #41, #36, #31</li>
+<li>Merged #39</li>
+</ul>
+<h3 id="v202">v2.0.2</h3>
+<ul>
+<li>Fix #25 -- Text is incorrectly rendered as code</li>
+<li>Fix #26 -- Broken links for URLs with fragment identifiers</li>
+<li>No longer transforms titles in a docstring that are indented (eg. to
+  avoid an indented code block with a <code>#</code> comment to be corrupted)</li>
+</ul>
 <h3 id="v201">v2.0.1</h3>
 <ul>
 <li>Support <code>additional_search_path</code> key in configuration</li>
@@ -284,7 +315,7 @@ placeholders can also be tuples in the form <code>(&lt;type&gt;[, ...])</code>.<
 <li>Complete overhaul of <strong>pydoc-markdown</strong> employing MkDocs and the Markdown module.</li>
 </ul>
 <hr />
-<p align="center">Copyright &copy; 2017  Niklas Rosenstein</p>
+<p align="center">Copyright &copy; 2017-2018  Niklas Rosenstein</p>
               
             </div>
           </div>
@@ -305,20 +336,20 @@ placeholders can also be tuples in the form <code>(&lt;type&gt;[, ...])</code>.<
     
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-	  
+      
         </div>
       </div>
 
     </section>
-    
+
   </div>
 
-  <div class="rst-versions" role="note" style="cursor: pointer">
+  <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a href="https://github.com/NiklasRosenstein/pydoc-markdown" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/NiklasRosenstein/pydoc-markdown/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
       
@@ -326,12 +357,19 @@ placeholders can also be tuples in the form <code>(&lt;type&gt;[, ...])</code>.<
       
     </span>
 </div>
-    <script src="./js/theme.js"></script>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
 </body>
 </html>
 
 <!--
-MkDocs version : 0.16.3
-Build Date UTC : 2017-05-27 10:31:36
+MkDocs version : 1.1
+Build Date UTC : 2020-03-01 03:24:07
 -->
