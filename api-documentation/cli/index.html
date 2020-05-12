@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>CLI - My Project</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "CLI";
+    var mkdocs_page_input_path = "api-documentation/cli.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> My Project</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API Documentation</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">CLI</a>
+    <ul class="current">
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../interfaces/">Interfaces</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../reflection/">Reflection</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../loaders/">Loaders</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../processors/">Processors</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Renderers</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../renderers/markdownrenderer/">MarkdownRenderer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../renderers/mkdocsrenderer/">MkdocsRenderer</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">My Project</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>API Documentation &raquo;</li>
+        
+      
+    
+    <li>CLI</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><a name=".pydoc_markdown.main.cli"></a></p>
+<h4 id="cli">cli</h4>
+<pre><code class="python">@click.command()
+@click.argument('config', required=False)
+@click.option('--bootstrap',
+  is_flag=True,
+  help='Render the default configuration file into the current working directory and quit.')
+@click.option('--bootstrap-mkdocs',
+  is_flag=True,
+  help='Render a template configuration file for generating MkDpcs files into the current '
+       'working directory and quit.')
+@click.option('--verbose', '-v',
+  is_flag=True,
+  help='Increase log verbosity.')
+@click.option('--quiet', '-q',
+  is_flag=True,
+  help='Decrease the log verbosity.')
+@click.option('--module', '-m', 'modules',
+  metavar='MODULE',
+  multiple=True,
+  help='The module to parse and generated API documentation for. Can be '
+       'specified multiple times. ' + DEFAULT_CONFIG_NOTICE)
+@click.option('--search-path', '-I',
+  metavar='PATH',
+  multiple=True,
+  help='A directory to use in the search for Python modules. Can be '
+       'specified multiple times. ' + DEFAULT_CONFIG_NOTICE)
+@click.option('--py2/--py3', 'py2',
+  default=None,
+  help='Switch between parsing Python 2 and Python 3 code. The default '
+       'is Python 3. Using --py2 will enable parsing code that uses the '
+       '&quot;print&quot; statement. This is equivalent of setting the print_function '
+       'option of the &quot;python&quot; loader to False. ' + DEFAULT_CONFIG_NOTICE)
+@click.option('--render-toc/--no-render-toc',
+  default=None,
+  help='Enable/disable the rendering of the TOC in the &quot;markdown&quot; renderer.')
+@click.option('--watch-and-serve', '-w',
+  is_flag=True,
+  help='Watch for file changes and re-render if needed, and run &quot;mkdocs '
+       'serve&quot; in the background. This option is only supported for the '
+       '&quot;mkdocs&quot; renderer.')
+@click.option('--open', '-o', 'open_browser',
+  is_flag=True,
+  help='Open your browser after starting &quot;mkdocs serve&quot;. Can only be used '
+       'together with the --watch-and-serve option.')
+cli(config, bootstrap, bootstrap_mkdocs, verbose, quiet, modules, search_path, render_toc, py2, watch_and_serve, open_browser)
+</code></pre>
+
+<p>Pydoc-Markdown is a renderer for Python API documentation in Markdown
+format.</p>
+<p>With no arguments it will load the default configuration file. If the
+<em>config</em> argument is specified, it must be the name of a configuration file
+or a YAML formatted object for the configuration.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../interfaces/" class="btn btn-neutral float-right" title="Interfaces">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../.." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../interfaces/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

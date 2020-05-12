@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>MkdocsRenderer - My Project</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "MkdocsRenderer";
+    var mkdocs_page_input_path = "api-documentation/renderers/mkdocsrenderer.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> My Project</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API Documentation</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../../cli/">CLI</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../interfaces/">Interfaces</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../reflection/">Reflection</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../loaders/">Loaders</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../processors/">Processors</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Renderers</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../markdownrenderer/">MarkdownRenderer</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">MkdocsRenderer</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#output_directory">output_directory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#clean_docs_directory_on_render">clean_docs_directory_on_render</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pages">pages</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#markdown">markdown</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#site_name">site_name</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mkdocs_config">mkdocs_config</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#organize_modules">organize_modules</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">My Project</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Renderers &raquo;</li>
+        
+      
+        
+          <li>API Documentation &raquo;</li>
+        
+      
+    
+    <li>MkdocsRenderer</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><a name=".pydoc_markdown.contrib.renderers.mkdocs.MkdocsRenderer"></a></p>
+<h3 id="mkdocsrenderer">MkdocsRenderer</h3>
+<pre><code class="python">class MkdocsRenderer(Struct)
+</code></pre>
+
+<p><a name=".pydoc_markdown.contrib.renderers.mkdocs.MkdocsRenderer.output_directory"></a></p>
+<h4 id="output_directory">output_directory</h4>
+<p>The output directory for the generated Markdown files. Defaults to
+<code>build/docs</code>.</p>
+<p><a name=".pydoc_markdown.contrib.renderers.mkdocs.MkdocsRenderer.clean_docs_directory_on_render"></a></p>
+<h4 id="clean_docs_directory_on_render">clean_docs_directory_on_render</h4>
+<p>Remove the <code>docs</code> directory in the <a href="#.pydoc_markdown.contrib.renderers.mkdocs.MkdocsRenderer.output_directory"><code>output_directory</code></a> before rendering.</p>
+<p><a name=".pydoc_markdown.contrib.renderers.mkdocs.MkdocsRenderer.pages"></a></p>
+<h4 id="pages">pages</h4>
+<p>The pages to render into the output directory.</p>
+<p><a name=".pydoc_markdown.contrib.renderers.mkdocs.MkdocsRenderer.markdown"></a></p>
+<h4 id="markdown">markdown</h4>
+<p>Markdown renderer settings.</p>
+<p><a name=".pydoc_markdown.contrib.renderers.mkdocs.MkdocsRenderer.site_name"></a></p>
+<h4 id="site_name">site_name</h4>
+<p>The name of the site. This will be carried into the <code>site_name</code> key
+of the <a href="#.pydoc_markdown.contrib.renderers.mkdocs.MkdocsRenderer.mkdocs_config"><code>mkdocs_config</code></a>.</p>
+<p><a name=".pydoc_markdown.contrib.renderers.mkdocs.MkdocsRenderer.mkdocs_config"></a></p>
+<h4 id="mkdocs_config">mkdocs_config</h4>
+<p>Arbitrary configuration values that will be rendered to an
+<code>mkdocs.yml</code> file.</p>
+<p><a name=".pydoc_markdown.contrib.renderers.mkdocs.MkdocsRenderer.organize_modules"></a></p>
+<h4 id="organize_modules">organize_modules</h4>
+<pre><code class="python"> | organize_modules(graph) -&gt; Iterable[Tuple[List[str], Page, List[Object]]]
+</code></pre>
+
+<p>Organizes the objects in the <em>graph</em> in pairs with the pages that
+are supposed to contain them (per the "contents" filter).</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../markdownrenderer/" class="btn btn-neutral" title="MarkdownRenderer"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../markdownrenderer/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

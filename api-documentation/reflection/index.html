@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Loader - pyodoc-markdown Documentation</title>
+  <title>Reflection - My Project</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Loader";
-    var mkdocs_page_input_path = "extensions\\loader.md";
+    var mkdocs_page_name = "Reflection";
+    var mkdocs_page_input_path = "api-documentation/reflection.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -38,7 +38,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-        <a href="../.." class="icon icon-home"> pyodoc-markdown Documentation</a>
+        <a href="../.." class="icon icon-home"> My Project</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -52,17 +52,28 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">API Documentation</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../document/">Document</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../imp/">Import Utils</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Extension API</span></p>
                 <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Loader</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../cli/">CLI</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../preprocessors/">Preprocessors</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../interfaces/">Interfaces</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Reflection</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#resolve_ref">resolve_ref</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../loaders/">Loaders</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../processors/">Processors</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Renderers</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../renderers/markdownrenderer/">MarkdownRenderer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../renderers/mkdocsrenderer/">MkdocsRenderer</a>
+                </li>
+    </ul>
                     </li>
                 </ul>
       </div>
@@ -74,7 +85,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../..">pyodoc-markdown Documentation</a>
+        <a href="../..">My Project</a>
       </nav>
 
       
@@ -86,15 +97,12 @@
     
       
         
-          <li>Extension API &raquo;</li>
+          <li>API Documentation &raquo;</li>
         
       
     
-    <li>Loader</li>
+    <li>Reflection</li>
     <li class="wy-breadcrumbs-aside">
-      
-        <a href="https://github.com/NiklasRosenstein/pydoc-markdown/edit/master/docs/extensions/loader.md"
-          class="icon icon-github"> Edit on GitHub</a>
       
     </li>
   </ul>
@@ -104,31 +112,24 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="pydocmd.loader">pydocmd.loader</h1>
-
-<p>This module provides implementations to load documentation information from
-an identifier as it is specified in the <code>pydocmd.yml:generate</code> configuration
-key. A loader basically takes care of loading the documentation content for
-that name, but is not supposed to apply preprocessing.</p>
-<h2 id="pydocmd.loader.PythonLoader">PythonLoader</h2>
-
-<pre><code class="python">PythonLoader(config)
+                <p><a name=".pydoc_markdown.reflection.ModuleGraph"></a></p>
+<h3 id="modulegraph">ModuleGraph</h3>
+<pre><code class="python">class ModuleGraph(Object):
+ |  ModuleGraph(nodes=())
 </code></pre>
 
-<p>Expects absolute identifiers to import with <a href="#pydocmd.loader.PythonLoader.import_object_with_scope"><code>import_object_with_scope()</code></a>.</p>
-<h3 id="pydocmd.loader.PythonLoader.load_section">load_section</h3>
-
-<pre><code class="python">PythonLoader.load_section(section)
+<p>Represents a collection of <a href="#.pydoc_markdown.reflection.Object"><code>Objects</code></a>, typically <a href="#.pydoc_markdown.reflection.Module"><code>Modules</code></a>.</p>
+<p><a name=".pydoc_markdown.reflection.ModuleGraph.resolve_ref"></a></p>
+<h4 id="resolve_ref">resolve_ref</h4>
+<pre><code class="python"> | resolve_ref(scope: Object, ref: List[str]) -&gt; Optional[Object]
 </code></pre>
 
-<p>Loads the contents of a <a href="#pydocmd.loader.PythonLoader.load_section.Section"><code>Section</code></a>. The <code>section.identifier</code> is the name
-of the object that we need to load.</p>
-<p><strong>Arguments</strong></p>
-<ul>
-<li><strong>section (Section)</strong>: The section to load. Fill the <code>section.title</code> and
-    <code>section.content</code> values. Optionally, <code>section.loader_context</code> can
-    be filled with custom arbitrary data to reference at a later point.</li>
-</ul>
+<p>Resolve a reference to another object from within the specified
+<em>scope</em>. Returns the target, or None if the target cannot be resolved
+from the ref.</p>
+<p>The <em>ref</em> must be a list of names that can be retrieved from the scope's
+members in order. If no scope is specified, it will be resolved inside
+the <a href="#.pydoc_markdown.reflection.ModuleGraph"><code>ModuleGraph</code></a>.</p>
               
             </div>
           </div>
@@ -136,10 +137,10 @@ of the object that we need to load.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../preprocessors/" class="btn btn-neutral float-right" title="Preprocessors">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../loaders/" class="btn btn-neutral float-right" title="Loaders">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../imp/" class="btn btn-neutral" title="Import Utils"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../interfaces/" class="btn btn-neutral" title="Interfaces"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -164,13 +165,11 @@ of the object that we need to load.</p>
   <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a href="https://github.com/NiklasRosenstein/pydoc-markdown/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+        <span><a href="../interfaces/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span><a href="../../imp/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../preprocessors/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../loaders/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

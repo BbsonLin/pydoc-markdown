@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>pyodoc-markdown Documentation</title>
+  <title>My Project</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -38,7 +38,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-        <a href="." class="icon icon-home"> pyodoc-markdown Documentation</a>
+        <a href="." class="icon icon-home"> My Project</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -50,41 +50,32 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href=".">Home</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
-    </li>
     <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#syntax">Syntax</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#cross-references">Cross-references</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#sections">Sections</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#code-blocks">Code Blocks</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#changes">Changes</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#v210-2020-03-01">v2.1.0 (2020-03-01)</a>
-    </li>
-        </ul>
+    <li class="toctree-l2"><a class="reference internal" href="#lib2to3-quirks">lib2to3 Quirks</a>
     </li>
     </ul>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">API Documentation</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="document/">Document</a>
+                    <li class="toctree-l1"><a class="reference internal" href="api-documentation/cli/">CLI</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="imp/">Import Utils</a>
+                    <li class="toctree-l1"><a class="reference internal" href="api-documentation/interfaces/">Interfaces</a>
                     </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Extension API</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="extensions/loader/">Loader</a>
+                    <li class="toctree-l1"><a class="reference internal" href="api-documentation/reflection/">Reflection</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="extensions/preprocessors/">Preprocessors</a>
+                    <li class="toctree-l1"><a class="reference internal" href="api-documentation/loaders/">Loaders</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="api-documentation/processors/">Processors</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Renderers</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="api-documentation/renderers/markdownrenderer/">MarkdownRenderer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="api-documentation/renderers/mkdocsrenderer/">MkdocsRenderer</a>
+                </li>
+    </ul>
                     </li>
                 </ul>
       </div>
@@ -96,7 +87,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href=".">pyodoc-markdown Documentation</a>
+        <a href=".">My Project</a>
       </nav>
 
       
@@ -111,9 +102,6 @@
     <li>Home</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/NiklasRosenstein/pydoc-markdown/edit/master/docs/index.md"
-          class="icon icon-github"> Edit on GitHub</a>
-      
     </li>
   </ul>
   
@@ -122,200 +110,113 @@
           <div role="main">
             <div class="section">
               
-                <blockquote>
-<p>[April 23, 2019] The current version of Pydoc-Markdown (2.x) is not actively developed.
-Efforts are focused on Pydoc-markdown 3.x which can be found on the <a href="https://github.com/NiklasRosenstein/pydoc-markdown/tree/develop">develop</a>.</p>
-</blockquote>
-<h1 id="pydocmd">pydocmd</h1>
-<p>&ndash; <em>insipired by the <a href="https://keras.io/">Keras</a> Documentation</em></p>
-<p>Pydocmd uses <a href="http://www.mkdocs.org/">MkDocs</a> and extended <a href="https://python-markdown.github.io/">Markdown</a> syntax to generate beautiful
-Python API documentation.</p>
-<p><strong>Todo</strong></p>
+                <h1 id="pydoc-markdown">Pydoc-Markdown</h1>
+<p><a href="https://circleci.com/gh/NiklasRosenstein/workflows/pydoc-markdown/tree/develop"><img align="right" src="https://circleci.com/gh/NiklasRosenstein/pydoc-markdown/tree/develop.svg?style=svg" alt="CircleCI"><img align="right" src="https://img.shields.io/badge/version-3.x-purple" alt="Version 3.x"></a></p>
+<p>Pydoc-Markdown is a tool to create Python API documentation in markdown format
+based on <code>lib2to3</code>.</p>
+<p><strong>Features</strong></p>
 <ul>
-<li>[x] Support <code>+</code> suffix to include documented members of a module/class</li>
-<li>[ ] Expand and link cross-references (eg. <code>#SomeClass</code>)</li>
-<li>[ ] Parse, format and link types listed in parameter/member/raise/return type
-      docstrings (eg. <code>someattr (int): This is...</code>)</li>
+<li>Parses the AST instead of running your code</li>
+<li>Understands multiple documentation styles (Sphinx, Google, Pydoc-Markdown)</li>
+<li>Resolves cross-references of the form <code>#PetType.CAT</code></li>
+<li>Supports attribute docstrings (<code>#: ...</code> before or string literals after
+  the statement)</li>
 </ul>
-<h2 id="installation">Installation</h2>
-<pre><code>pip install pydoc-markdown
-pip install git+https://github.com/NiklasRosenstein/pydoc-markdown.git  # latest development version
-</code></pre>
+<p><strong>On the roadmap</strong></p>
+<ul>
+<li>Mkdocs integration (for feature parity with Pydoc-Markdown 2.x)</li>
+<li>Support for images (#94)</li>
+<li>Understand fixmes and hints in the source code (eg. <code># doc: ignore</code>)</li>
+<li>Cross-page (and cross-project) links in API documentation</li>
+</ul>
 <h2 id="usage">Usage</h2>
-<p>Pydocmd can generate plain Markdown files from Python modules using the
-<code>pydocmd simple</code> command. Specify one or more module names on the command-line.
-Supports the <code>+</code> syntax to include members of the module (or <code>++</code> to include
-members of the members, etc.)</p>
-<pre><code>pydocmd simple mypackage+ mypackage.mymodule+ &gt; docs.md
+<p>Pydoc-Markdown 3 is not currently available on PyPI. To install the current
+development version, you can simply pass the Git repository URL to Pip. It is
+recommended to install Pydoc-Markdown in isolation with <a href="https://pypi.org/project/pipx/">Pipx</a>.</p>
+<pre><code>$ pipx install git+https://github.com/NiklasRosenstein/pydoc-markdown.git@develop
 </code></pre>
-<p>Alternatively, pydocmd wraps the MkDocs command-line interface and generates
-the markdown pages beforehand. Simply use <code>pydocmd build</code> to build the
-documentation, or <code>pydocmd serve</code> to serve the documentation on a local HTTP
-server. The <code>pydocmd gh-deploy</code> from MkDocs is also supported.</p>
-<p>A configuration file <code>pydocmd.yml</code> is required to use pydocmd in this mode.
-Below is an example configuration. To get started, create <code>docs/</code> directory
-and a file <code>pydocmd.yml</code> inside of it. Copy the configuration below and
-adjust it to your needs, then run <code>pydocmd build</code> from the <code>docs/</code> directory.</p>
-<pre><code class="yaml">site_name: &quot;My Documentation&quot;
-
-# This tells pydocmd which pages to generate from which Python modules,
-# functions and classes. At the first level is the page name, below that
-# is a tree of Python member names (modules, classes, etc.) that should be
-# documented. Higher indentation leads to smaller header size.
-generate:
-- baz/cool-stuff.md:
-  - foobar.baz:
-    - foobar.baz.CoolClass+     # (+ to include members)
-    - foobar.baz.some_function
-- baz/more-stuff.md:
-  - foobar.more++               # (++ to include members, and their members)
-
-# MkDocs pages configuration. The `&lt;&lt;` operator is sugar added by pydocmd
-# that allows you to use an external Markdown file (eg. your project's README)
-# in the documentation. The path must be relative to current working directory.
-# This configuration is not mandatory if you have your own mkdocs.yml config file.
-pages:
-- Home: index.md &lt;&lt; ../README.md
-- foobar.baz:
-  - Cool Stuff: baz/cool-stuff.md
-
-# These options all show off their default values. You don't have to add
-# them to your configuration if you're fine with the default.
-docs_dir: sources
-gens_dir: _build/pydocmd     # This will end up as the MkDocs 'docs_dir'
-site_dir: _build/site
-theme:    readthedocs
-loader:   pydocmd.loader.PythonLoader
-preprocessor: pydocmd.preprocessors.simple.Preprocessor
-
-# Whether to output headers as markdown or HTML.  Used to workaround
-# https://github.com/NiklasRosenstein/pydoc-markdown/issues/11.  The default is
-# to generate HTML with unique and meaningful id tags, which can't be done with
-# markdown.
-#
-# Note: if using the simple generator mode, this will default to 'markdown'
-# instead of 'html'.
-headers: html
-
-# Additional search path for your Python module. If you use Pydocmd from a
-# subdirectory of your project (eg. docs/), you may want to add the parent
-# directory here.
-additional_search_paths:
-- ..
+<p>This makes the <code>pydoc-markdown</code> command available in your command-line.</p>
+<p>On the CLI you specify either the name of a configuration file or provide a
+YAML formatted configuration. If you do not specify any arguments, the default
+configuration file is loaded (<code>pydoc-markdown.ya?ml</code>).</p>
+<pre><code>$ pydoc-markdown [&lt;config&gt;]
+</code></pre>
+<p>The configuration is composed of three main components: A list of loaders,
+a list of documentation processors and a renderer. The default configuration
+is defined as follows:</p>
+<pre><code class="yaml">loaders:
+  - type: python
+processors:
+  - type: filter
+  - type: smart
+  - type: crossref
+renderer:
+  - type: markdown
 </code></pre>
 
-<h2 id="syntax">Syntax</h2>
-<h3 id="cross-references">Cross-references</h3>
-<p>Symbols in the same namespace may be referenced by using a hash-symbol (<code>#</code>)
-directly followed by the symbols' name, including relative references. Note that
-using parentheses for function names is encouraged and will be ignored and
-automatically added when converting docstrings. Examples: <code>#ClassName.member</code> or
-<code>#mod.function()</code>.</p>
-<p>For absolute references for modules or members in names that are not available
-in the current global namespace, <code>#::mod.member</code> must be used (note the two
-preceeding two double-colons).</p>
-<p>For long reference names where only some part of the name should be displayed,
-the syntax <code>#X~some.reference.name</code> can be used, where <code>X</code> is the number of
-elements to keep. If <code>X</code> is omitted, it will be assumed 1. Example:
-<code>#~some.reference.name</code> results in only <code>name</code> being displayed.</p>
-<p>In order to append additional characters that are not included in the actual
-reference name, another hash-symbol can be used, like <code>#Signal#s</code>.</p>
-<h3 id="sections">Sections</h3>
-<p>Sections can be generated with the Markdown <code># &lt;Title&gt;</code> syntax. It is important
-to add a whitespace after the hash-symbol (<code>#</code>), as otherwise it would represent
-a cross-reference. Some special sections alter the rendered result of their
-content, including</p>
-<ul>
-<li>Arguments (1)</li>
-<li>Parameters (1)</li>
-<li>Attributes (1)</li>
-<li>Members (1)</li>
-<li>Raises (2)</li>
-<li>Returns (2)</li>
-</ul>
-<p>(1): Lines beginning with <code>&lt;ident&gt; [(&lt;type&gt;[, ...])]:</code> are treated as
-argument/parameter or attribute/member declarations. Types listed inside the
-parenthesis (optional) are cross-linked, if possible. For attribute/member
-declarations, the identifier is typed in a monospace font.</p>
-<p>(2): Lines beginning with <code>&lt;type&gt;[, ...]:</code> are treated as raise/return type
-declarations and the type names are cross-linked, if possible.</p>
-<p>Lines following a name's description are considered part of the most recent
-documentation unless separated by another declaration or an empty line. <code>&lt;type&gt;</code>
-placeholders can also be tuples in the form <code>(&lt;type&gt;[, ...])</code>.</p>
-<h3 id="code-blocks">Code Blocks</h3>
-<p>GitHub-style Markdown code-blocks with language annotations can be used.</p>
-<pre><code>```python
-&gt;&gt;&gt; for i in range(100):
-...
-```
+<p>It is automatically applied when using the Pydoc-Markdown CLI to render
+Markdown documentation for Python modules on the fly (without a YAML
+configuration file). Example:</p>
+<pre><code>$ cat &lt;&lt;EOF &gt;a.py
+def say_hello(name: str):
+  """ Says hello to the person specified with *name*.
+
+  :param name: The person to say hello to.
+  :raises ValueError: If *name* is empty.
+  :returns: Nothing """
+  # ...
+EOF
+$ pydoc-markdown -m a -I .
 </code></pre>
-<hr />
-<h2 id="changes">Changes</h2>
-<h3 id="v210-2020-03-01">v2.1.0 (2020-03-01)</h3>
+<details><summary>Expand to see the generated Markdown</summary>
+
+---
+
+<a name=".a"></a>
+## a
+
+<a name=".a.say_hello"></a>
+#### say\_hello
+
+
+<pre><code class="python">say_hello(name: str)
+</code></pre>
+
+
+Says hello to the person specified with *name*.
+
+**Arguments**:
+
+- `name`: The person to say hello to.
+
+**Raises**:
+
+- `ValueError`: If *name* is empty.
+
+**Returns**:
+
+Nothing
+
+---
+
+</details>
+
+<p>To jumpstart your documentation endavours, try running <code>pydoc-markdown --bootstrap</code> or
+<code>pydoc-markdown --bootsrap-mkdocs</code> to generate a template configuration file.</p>
+<p>If a configuration file exists, then the CLI needs to be invoked without
+arguments, or with one argument that specifies the path to the configuration
+file. When using the <code>mkdocs</code> renderer, you may add the <code>--watch-and-serve</code>
+and <code>--open</code> arguments for smooth live-feedback.</p>
+<pre><code>$ pydoc-markdown ./pydoc-markdown.yaml -wo
+</code></pre>
+<h2 id="lib2to3-quirks">lib2to3 Quirks</h2>
+<p>Pydoc-Markdown doesn't execute your Python code but instead relies on the
+<code>lib2to3</code> parser. This means it also inherits any quirks of <code>lib2to3</code>.</p>
+<p><strong>List of known quirks</strong></p>
 <ul>
-<li>Use <code>yaml.safe_load()</code> instead of <code>yaml.load()</code> to silence warning about
-  unsafe operation (#87)</li>
-<li>
-<h1 id="65-properly-loaded-docstring-for-classmethodstaticmethod">65 &ndash; Properly loaded docstring for classmethod/staticmethod.</h1>
-</li>
-<li>
-<h1 id="62-getting-descriptors-instance-instead-calling-its-get-method">62 &ndash; getting descriptor's instance instead calling its <strong>get</strong> method.</h1>
-</li>
-<li>
-<h1 id="61-pages-configuration-is-deprecated-in-mkdocs-100-mkdoc-dependency-bumped-to-100">61 &ndash; 'pages' configuration is deprecated in MKDocs &gt; 1.0.0. MKDoc dependency bumped to &gt;=1.0.0.</h1>
-</li>
-<li>
-<h1 id="63-pages-configuration-not-required-when-mkdocsyml-present">63 &ndash; Pages configuration not required when mkdocs.yml present.</h1>
-</li>
-<li>Add newline before titles for plaintext visibility</li>
-<li>Arguments/Returns section is considered ended if an empty line is found</li>
-<li>Parse references and replace them with markdown links</li>
-<li>Pretty print function signature</li>
-<li>Add smart and google preprocessors</li>
+<li>A function argument in Python 3 cannot be called <code>print</code> even though
+  it is legal syntax</li>
 </ul>
-<h3 id="v205-2018-11-15">v2.0.5 (2018-11-15)</h3>
-<ul>
-<li>Now copies all files from the docs_dir (to include images etc.) (see #56)</li>
-<li>Fix error with delayed imports changing dictionary size during iteration (see #57)</li>
-<li>Add <code>headers</code> option which can be of value <code>'html'</code> or <code>'markdown'</code> (see #55)</li>
-<li>Default <code>headers</code> option to <code>'markdown'</code> in <code>simple</code> mode (see #59)</li>
-</ul>
-<h3 id="v204-2018-07-24">v2.0.4 (2018-07-24)</h3>
-<ul>
-<li>Add <code>-c key=value</code> argument for <code>generate</code> and <code>simple</code> command</li>
-<li>Add <code>filter=["docstring"]</code> option (#43)</li>
-<li>Fix regex for detecting cross-references (#44)</li>
-<li>Handle classes that don't define <code>__init__()</code> (PR#51)</li>
-<li>Add support for reStructuredText Markup (eg. <code>:class:`MyClass`</code>) (PR#46, #1)</li>
-<li>Handle <code>@property</code> functions (PR#50)</li>
-</ul>
-<h3 id="v203">v2.0.3</h3>
-<ul>
-<li>Fix #41, #36, #31</li>
-<li>Merged #39</li>
-</ul>
-<h3 id="v202">v2.0.2</h3>
-<ul>
-<li>Fix #25 -- Text is incorrectly rendered as code</li>
-<li>Fix #26 -- Broken links for URLs with fragment identifiers</li>
-<li>No longer transforms titles in a docstring that are indented (eg. to
-  avoid an indented code block with a <code>#</code> comment to be corrupted)</li>
-</ul>
-<h3 id="v201">v2.0.1</h3>
-<ul>
-<li>Support <code>additional_search_path</code> key in configuration</li>
-<li>Render headers as HTML <code>&lt;hX&gt;</code> tags rather than Markdown tags, so we
-  assign a proper ID to them</li>
-<li>Fix #21 -- AttributeError: 'module' object has no attribute 'signature'</li>
-<li>Now requires the <code>six</code> module</li>
-<li>FIx #22 -- No blank space after header does not render codeblocks</li>
-</ul>
-<h3 id="v200">v2.0.0</h3>
-<ul>
-<li>Complete overhaul of <strong>pydoc-markdown</strong> employing MkDocs and the Markdown module.</li>
-</ul>
-<hr />
-<p align="center">Copyright &copy; 2017-2018  Niklas Rosenstein</p>
               
             </div>
           </div>
@@ -323,7 +224,7 @@ placeholders can also be tuples in the form <code>(&lt;type&gt;[, ...])</code>.<
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="document/" class="btn btn-neutral float-right" title="Document">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="api-documentation/cli/" class="btn btn-neutral float-right" title="CLI">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
     </div>
@@ -349,11 +250,9 @@ placeholders can also be tuples in the form <code>(&lt;type&gt;[, ...])</code>.<
   <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a href="https://github.com/NiklasRosenstein/pydoc-markdown/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-      
-        <span style="margin-left: 15px"><a href="document/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="api-documentation/cli/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
@@ -370,6 +269,6 @@ placeholders can also be tuples in the form <code>(&lt;type&gt;[, ...])</code>.<
 </html>
 
 <!--
-MkDocs version : 1.1
-Build Date UTC : 2020-03-01 03:24:07
+MkDocs version : 1.1.1
+Build Date UTC : 2020-05-12 21:38:14.008217+00:00
 -->
