@@ -7,15 +7,15 @@
         
         
         
-        <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>CLI - My Project</title>
-        <link href="../../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Changelog - My Project</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
 
-        <script src="../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
@@ -23,7 +23,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="../..">My Project</a>
+                <a class="navbar-brand" href="..">My Project</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -34,36 +34,36 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="navitem">
-                                <a href="../.." class="nav-link">Home</a>
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Changelog</a>
                             </li>
                             <li class="navitem">
-                                <a href="../../changelog/" class="nav-link">Changelog</a>
+                                <a href="../getting-started/" class="nav-link">Getting Started</a>
                             </li>
-                            <li class="navitem">
-                                <a href="../../getting-started/" class="nav-link">Getting Started</a>
-                            </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">API Documentation <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="./" class="dropdown-item active">CLI</a>
+    <a href="../api-documentation/cli/" class="dropdown-item">CLI</a>
 </li>
                                     
 <li>
-    <a href="../interfaces/" class="dropdown-item">Interfaces</a>
+    <a href="../api-documentation/interfaces/" class="dropdown-item">Interfaces</a>
 </li>
                                     
 <li>
-    <a href="../reflection/" class="dropdown-item">Reflection</a>
+    <a href="../api-documentation/reflection/" class="dropdown-item">Reflection</a>
 </li>
                                     
 <li>
-    <a href="../loaders/" class="dropdown-item">Loaders</a>
+    <a href="../api-documentation/loaders/" class="dropdown-item">Loaders</a>
 </li>
                                     
 <li>
-    <a href="../processors/" class="dropdown-item">Processors</a>
+    <a href="../api-documentation/processors/" class="dropdown-item">Processors</a>
 </li>
                                     
   <li class="dropdown-submenu">
@@ -71,11 +71,11 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../renderers/markdownrenderer/" class="dropdown-item">MarkdownRenderer</a>
+    <a href="../api-documentation/renderers/markdownrenderer/" class="dropdown-item">MarkdownRenderer</a>
 </li>
             
 <li>
-    <a href="../renderers/mkdocsrenderer/" class="dropdown-item">MkdocsRenderer</a>
+    <a href="../api-documentation/renderers/mkdocsrenderer/" class="dropdown-item">MkdocsRenderer</a>
 </li>
     </ul>
   </li>
@@ -90,12 +90,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../getting-started/" class="nav-link">
+                                <a rel="prev" href=".." class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../interfaces/" class="nav-link">
+                                <a rel="next" href="../getting-started/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -116,12 +116,59 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#changelog" class="nav-link">Changelog</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-</div>
+<h1 id="changelog">Changelog</h1>
+<h3 id="v303-unreleased">v3.0.3 (unreleased)</h3>
+<ul>
+<li>Rename <code>--watch-and-serve</code> to <code>--server</code></li>
+<li>Update <code>MarkdownRenderer</code> defaults for <code>descriptive_class_title</code> and
+  <code>descriptive_class_title</code></li>
+<li>Added <code>MkdocsRenderer.content_directory</code> (defaults to <code>content</code>, used to be
+  <code>docs</code> before)</li>
+<li>Renamed <code>MkdocsRenderer.clean_docs_directory_on_render</code> to <code>.clean_render</code>
+  and make it default to <code>False</code></li>
+<li>Fixed <code>--server</code> option, now reloads the <code>PydocMarkdown</code> config, does no
+  open the browser again and again</li>
+<li>Changed: <code>MkdocsRenderer.mkdocs_config</code> can be set to <code>null</code>, the renderer
+  will then refrain from writing a <code>mkdocs.yml</code> configuration file into the
+  output directory</li>
+</ul>
+<h3 id="v302-2020-05-16">v3.0.2 (2020-05-16)</h3>
+<ul>
+<li>Fix <code>NameError</code> in <code>MkdocsRenderer</code></li>
+</ul>
+<h3 id="v301-2020-05-16">v3.0.1 (2020-05-16)</h3>
+<ul>
+<li>Added <code>--version</code> option to <code>pydoc-markdown</code> command.</li>
+<li>Added <code>-p,--package</code> option to the <code>pydoc-markdown</code> command (which overrides
+  the <code>PythonLoader.packages</code> field).</li>
+<li>Added <code>pydoc_markdown.util.page</code> module</li>
+<li>Added <code>pydoc_markdown.__main__.RenderSession</code> class which makes the cli
+  logic easier to maintain and re-use.</li>
+<li>Added hidden <code>MarkdownRenderer.fp</code> option.</li>
+<li>Added <code>PythonLoader.packages</code> which will load the specified Python package
+  including all sub-packages and -modules.</li>
+<li>Changed behavior of <code>PythonLoader.modules</code>, which will now only load the
+  module that was explictly specified and not sub-packages or modules (note
+  that this also affects the <code>-m,--module</code> command-line option)</li>
+<li>Dynamically lookup <code>MarkdownRenderer</code> configuration from the configured
+  renderer such that renderers other than the <code>MarkdownRenderer</code> and
+  <code>MkdocsRenderer</code> that embed a <code>MarkdownRenderer</code> can benefit from command-line
+  level overrides like <code>--render-toc</code></li>
+</ul>
+<h3 id="v300-2020-05-12">v3.0.0 (2020-05-12)</h3>
+<ul>
+<li>Initial release of Pydoc-markdown v3</li>
+</ul></div>
             </div>
         </div>
 
@@ -130,11 +177,11 @@
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = "../..",
+            var base_url = "..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../../js/base.js" defer></script>
-        <script src="../../search/main.js" defer></script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">

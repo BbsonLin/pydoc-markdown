@@ -1,116 +1,148 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="None">
-  
-  
-  <link rel="shortcut icon" href="img/favicon.ico">
-  <title>My Project</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>My Project</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
 
-  <link rel="stylesheet" href="css/theme.css" />
-  <link rel="stylesheet" href="css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "Home";
-    var mkdocs_page_input_path = "index.md";
-    var mkdocs_page_url = null;
-  </script>
-  
-  <script src="js/jquery-2.1.1.min.js" defer></script>
-  <script src="js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
-  
-</head>
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
 
-<body class="wy-body-for-nav" role="document">
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">My Project</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-  <div class="wy-grid-for-nav">
-
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-        <a href="." class="icon icon-home"> My Project</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href=".">Home</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#lib2to3-quirks">lib2to3 Quirks</a>
-    </li>
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem active">
+                                <a href="." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="changelog/" class="nav-link">Changelog</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="getting-started/" class="nav-link">Getting Started</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">API Documentation <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="api-documentation/cli/" class="dropdown-item">CLI</a>
+</li>
+                                    
+<li>
+    <a href="api-documentation/interfaces/" class="dropdown-item">Interfaces</a>
+</li>
+                                    
+<li>
+    <a href="api-documentation/reflection/" class="dropdown-item">Reflection</a>
+</li>
+                                    
+<li>
+    <a href="api-documentation/loaders/" class="dropdown-item">Loaders</a>
+</li>
+                                    
+<li>
+    <a href="api-documentation/processors/" class="dropdown-item">Processors</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Renderers</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="api-documentation/renderers/markdownrenderer/" class="dropdown-item">MarkdownRenderer</a>
+</li>
+            
+<li>
+    <a href="api-documentation/renderers/mkdocsrenderer/" class="dropdown-item">MkdocsRenderer</a>
+</li>
     </ul>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">API Documentation</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="api-documentation/cli/">CLI</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="api-documentation/interfaces/">Interfaces</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="api-documentation/reflection/">Reflection</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="api-documentation/loaders/">Loaders</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="api-documentation/processors/">Processors</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Renderers</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="api-documentation/renderers/markdownrenderer/">MarkdownRenderer</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="api-documentation/renderers/mkdocsrenderer/">MkdocsRenderer</a>
-                </li>
-    </ul>
-                    </li>
-                </ul>
-      </div>
+  </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" class="nav-link disabled">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="changelog/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
     </div>
-    </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href=".">My Project</a>
-      </nav>
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href=".">Docs</a> &raquo;</li>
     
-      
-    
-    <li>Home</li>
-    <li class="wy-breadcrumbs-aside">
-      
-    </li>
-  </ul>
-  
-  <hr/>
-</div>
-          <div role="main">
-            <div class="section">
-              
-                <h1 id="pydoc-markdown">Pydoc-Markdown</h1>
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#pydoc-markdown" class="nav-link">Pydoc-Markdown</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#installation" class="nav-link">Installation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#usage" class="nav-link">Usage</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#lib2to3-quirks" class="nav-link">lib2to3 Quirks</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#releasing" class="nav-link">Releasing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="pydoc-markdown">Pydoc-Markdown</h1>
 <p><a href="https://circleci.com/gh/NiklasRosenstein/workflows/pydoc-markdown/tree/develop"><img align="right" src="https://circleci.com/gh/NiklasRosenstein/pydoc-markdown/tree/develop.svg?style=svg" alt="CircleCI"><img align="right" src="https://img.shields.io/badge/version-3.x-purple" alt="Version 3.x"></a></p>
 <p>Pydoc-Markdown is a tool to create Python API documentation in markdown format
 based on <code>lib2to3</code>.</p>
@@ -121,21 +153,23 @@ based on <code>lib2to3</code>.</p>
 <li>Resolves cross-references of the form <code>#PetType.CAT</code></li>
 <li>Supports attribute docstrings (<code>#: ...</code> before or string literals after
   the statement)</li>
+<li>Mkdocs integration</li>
+<li>Cross-page (and cross-project) links in API documentation) [Work in progress]</li>
 </ul>
 <p><strong>On the roadmap</strong></p>
 <ul>
-<li>Mkdocs integration (for feature parity with Pydoc-Markdown 2.x)</li>
 <li>Support for images (#94)</li>
 <li>Understand fixmes and hints in the source code (eg. <code># doc: ignore</code>)</li>
-<li>Cross-page (and cross-project) links in API documentation</li>
 </ul>
-<h2 id="usage">Usage</h2>
-<p>Pydoc-Markdown 3 is not currently available on PyPI. To install the current
-development version, you can simply pass the Git repository URL to Pip. It is
-recommended to install Pydoc-Markdown in isolation with <a href="https://pypi.org/project/pipx/">Pipx</a>.</p>
+<h2 id="installation">Installation</h2>
+<p>Using <a href="https://pypi.org/project/pipx/">Pipx</a> is recommended to avoid dependency clashes that can occur when installing multiple
+command-line tools into a single environment.</p>
+<pre><code>$ pipx install 'pydoc-markdown&gt;=3.0.0,&lt;4.0.0'
+</code></pre>
+<p>For the cutting-edge version, you can install Pydoc-Markdown directly from GitHub:</p>
 <pre><code>$ pipx install git+https://github.com/NiklasRosenstein/pydoc-markdown.git@develop
 </code></pre>
-<p>This makes the <code>pydoc-markdown</code> command available in your command-line.</p>
+<h2 id="usage">Usage</h2>
 <p>On the CLI you specify either the name of a configuration file or provide a
 YAML formatted configuration. If you do not specify any arguments, the default
 configuration file is loaded (<code>pydoc-markdown.ya?ml</code>).</p>
@@ -205,9 +239,9 @@ Nothing
 <code>pydoc-markdown --bootsrap-mkdocs</code> to generate a template configuration file.</p>
 <p>If a configuration file exists, then the CLI needs to be invoked without
 arguments, or with one argument that specifies the path to the configuration
-file. When using the <code>mkdocs</code> renderer, you may add the <code>--watch-and-serve</code>
+file. When using the <code>mkdocs</code> renderer, you may add the <code>--server</code>
 and <code>--open</code> arguments for smooth live-feedback.</p>
-<pre><code>$ pydoc-markdown ./pydoc-markdown.yaml -wo
+<pre><code>$ pydoc-markdown ./pydoc-markdown.yaml --server --open
 </code></pre>
 <h2 id="lib2to3-quirks">lib2to3 Quirks</h2>
 <p>Pydoc-Markdown doesn't execute your Python code but instead relies on the
@@ -217,58 +251,90 @@ and <code>--open</code> arguments for smooth live-feedback.</p>
 <li>A function argument in Python 3 cannot be called <code>print</code> even though
   it is legal syntax</li>
 </ul>
-              
+<h2 id="releasing">Releasing</h2>
+<p>Releases are automatically published from CircleCI.</p></div>
             </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="api-documentation/cli/" class="btn btn-neutral float-right" title="CLI">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-    
-  </div>
-
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-      
         </div>
-      </div>
 
-    </section>
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js" defer></script>
+        <script src="search/main.js" defer></script>
 
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-      
-      
-        <span style="margin-left: 15px"><a href="api-documentation/cli/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
 </div>
-    <script>var base_url = '.';</script>
-    <script src="js/theme.js" defer></script>
-      <script src="search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        };
-    </script>
 
-</body>
+    </body>
 </html>
 
 <!--
-MkDocs version : 1.1.1
-Build Date UTC : 2020-05-12 21:38:14.008217+00:00
+MkDocs version : 1.1.2
+Build Date UTC : 2020-05-16 13:33:48.007856+00:00
 -->
